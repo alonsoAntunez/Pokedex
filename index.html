@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="SHORTCUT ICON" href="assets/img/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/breakpoints.css" rel="stylesheet">
+    <title>Pokedex</title>
+</head>
+
+<body class="container-fluid">
+    <header class="row align-items-center justify-content-center headerContainer">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <a href="index.html"><img src="assets/img/International_Pokémon_logo.svg" alt="Pokemon Logo"></a>
+        </div>
+    </header>
+    <section class="row searchFormContainer">
+        <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-9 mx-auto">
+            <div class="row searchTitle">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h1>Which pokemon are you looking for?</h1>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 form-group inputContainer">
+                    <input type="text" name="pokeSearch" id="pokeSearch" value="" placeholder="Pikachu" class="form-control">
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 form-group buttonContainer">
+                    <button onclick="fetchPokemon()" class="form-control">Catch!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row searchResult">
+        <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-9 mx-auto">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 pokemonMain">
+                    <div class="row">
+                        <div class="col-12 pokemonImage">
+                            <img src="assets/img/pokeball.png" alt="Pokemon" id="pokeImg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 pokemonName">
+                            <h2 id="pokemonName" class="namePokemon"></h2>
+                            <h4 id="pokemonType" class="typePokemon"></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 pokemonStats">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Stats</h3>
+                        </div>
+                    </div>
+                    <div class="row statContainer hitPoints">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Hit Points<span id="hitNumber"></span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 statBarContainer">
+                                    <div class="statBar">
+                                        <div id="hpBar" class="statBarInner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row statContainer attack">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Attack<span id="attackNumber"></span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 statBarContainer">
+                                    <div class="statBar">
+                                        <div id="atBar" class="statBarInner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row statsContainer defense">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Defense<span id="defenseNumber"></span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 statBarContainer">
+                                    <div class="statBar">
+                                        <div id="defenseBar" class="statBarInner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row statContainer specialAttack">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <p>Special attack<span id="spAtNumber"></span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 statBarContainer">
+                                    <div class="statBar">
+                                        <div id="spAtBar" class="statBarInner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row statContainer specialDefense">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Special defense<span id="spDefNumber"></span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 statBarContainer">
+                                    <div class="statBar">
+                                        <div id="spDefBar" class="statBarInner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row statContainer speed">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Speed<span id="speedNumber"></span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 statBarContainer">
+                                    <div class="statBar">
+                                        <div id="speedBar" class="statBarInner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center wAndHRow">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h2 id="pokemonWeight"> </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pokemonW">
+                            <h3><i class="fa-solid fa-weight-scale"></i> Weight</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h2 id="pokemonHeight"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pokemonH">
+                            <h3><span class="material-icons">height</span> Height</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+</body>
+
+</html>

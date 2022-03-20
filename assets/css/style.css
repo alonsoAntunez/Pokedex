@@ -1,0 +1,159 @@
+html,
+body,
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+
+.headerContainer {
+    background: rgba(226, 82, 74, 1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.headerContainer img {
+    max-width: 250px;
+    width: 100%;
+}
+
+.searchFormContainer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: rgba(255, 203, 5, 1);
+}
+
+.searchFormContainer .searchTitle h1 {
+    color: rgba(47, 109, 181, 1);
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.searchFormContainer .inputContainer input {
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.searchFormContainer .buttonContainer button {
+    background: rgba(47, 109, 181, 1);
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.searchResult {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.searchResult .pokemonImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResult .pokemonImage img {
+    max-width: 200px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.searchResult .pokemonName {
+    text-align: center;
+}
+
+.searchResult .pokemonName h2 {
+    text-transform: capitalize;
+}
+
+.searchResult .pokemonName h4 {
+    text-transform: capitalize;
+}
+
+.pokemonStats h3 {
+    margin-bottom: 1rem;
+}
+
+.pokemonStats p {
+    margin-bottom: 1erm;
+}
+
+.statBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statBarContainer .statBar {
+    width: 100%;
+    background: rgba(200, 200, 200, 1);
+    min-height: 10px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.statBarContainer .statBar .statBarInner {
+    max-width: 100% !important;
+    width: 0;
+    background: rgba(226, 82, 74, 1);
+    min-height: 10px;
+    border-radius: 5px;
+    transition: 300ms;
+}
+
+.hitPoints .statBar .statBarInner {
+    background: rgba(255, 37, 3, 1);
+}
+
+.attack .statBar .statBarInner {
+    background: rgba(254, 124, 0, 1);
+}
+
+.defense .statBar .statBarInner {
+    background: rgba(0, 117, 208, 1);
+}
+
+.specialAttack .statBar .statBarInner {
+    background: rgba(116, 38, 184, 1);
+}
+
+.specialDefense .statBar .statBarInner {
+    background: rgba(2, 183, 6, 1);
+}
+
+.speed .statBar .statBarInner {
+    background: rgba(255, 249, 0, 1);
+}
+
+.searchResult .wAndHRow {
+    margin-top: 2rem;
+    text-align: center;
+    opacity: 0;
+}
+
+.searchResult .pokemonW h3,
+.searchResult .pokemonH h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResult .pokemonW h3 i,
+.searchResult .pokemonH h3 span {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: rgba(254, 124, 0, 1)
+}
+
+.searchResult .pokemonH h3 span {
+    font-size: 2.5rem;
+}
